@@ -64,3 +64,10 @@ subprojects {
 
   check.dependsOn jacocoTestCoverageVerification
 }
+
+project(':test') {
+    dependencies {
+        compile project(':api')
+        compile 'junit:junit:4.12' //This project is an extension of testing
+    }
+}
