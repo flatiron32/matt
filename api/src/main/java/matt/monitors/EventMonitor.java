@@ -1,4 +1,4 @@
-package matt;
+package matt.monitors;
 
 public class EventMonitor extends AbstractMonitor {
 

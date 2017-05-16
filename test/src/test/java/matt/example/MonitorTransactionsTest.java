@@ -1,7 +1,7 @@
 package matt.example;
 
 import matt.MonitoringEngine;
-import matt.TransactionMonitor;
+import matt.monitors.TransactionMonitor;
 import matt.test.MockMonitorProcessor;
 import org.junit.After;
 import org.junit.Before;

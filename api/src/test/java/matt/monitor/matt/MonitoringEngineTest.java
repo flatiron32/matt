@@ -1,9 +1,9 @@
 package matt.monitor.matt;
 
-import matt.EventMonitor;
 import matt.Monitor;
 import matt.MonitorProcessor;
 import matt.MonitoringEngine;
+import matt.monitors.EventMonitor;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,7 +1,9 @@
-package matt;
+package matt.monitors;
 
 import java.util.HashMap;
 import java.util.Map;
+import matt.Monitor;
+import matt.MonitoringEngine;
 
 public abstract class AbstractMonitor implements Monitor {
 

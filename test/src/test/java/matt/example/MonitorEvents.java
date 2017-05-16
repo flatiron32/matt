@@ -1,6 +1,6 @@
 package matt.example;
 
-import matt.EventMonitor;
+import matt.monitors.EventMonitor;
 
 public class MonitorEvents {
 
