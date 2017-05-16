@@ -24,9 +24,13 @@ public final class MonitoringEngine {
    *
    * @param monitor The monitor to be processed.
    */
-  public void process(EventMonitor monitor) {
+  public void process(Monitor monitor) {
     for (MonitorProcessor processor: processors) {
       processor.process(monitor);
     }
+  }
+
+  public void clearProcessors() {
+    processors.clear();
   }
 }

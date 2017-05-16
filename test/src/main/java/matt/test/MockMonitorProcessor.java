@@ -1,5 +1,8 @@
 package matt.test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import matt.Monitor;
@@ -18,11 +21,18 @@ public class MockMonitorProcessor implements MonitorProcessor {
    * Assert that the next monitor recieved by the processor was named the passes name value.
    * The monitor is removed from the list to be reviewed.
    * @param name The name to be checked against the next monitor received.
+   * @param attributes The attributes that must exist for the monitor.
    */
-  public void assertEventMonitor(String name) {
+  public void assertEventMonitor(String name, String... attributes) {
     Assert.assertFalse("No monitor available to assert.", monitors.isEmpty());
     Monitor monitor = monitors.remove(0);
-    Assert.assertEquals(name, monitor.getName());
+    assertEquals(name, monitor.getName());
+    assertEquals(
+        "Incorrect number of attributes associated with monitor (" + monitor.getName() + ")",
+        attributes.length, monitor.getAttributes().size());
+    for (String attribute : attributes) {
+      assertNotNull(monitor.getAttributes().remove(attribute));
+    }
   }
 
   public void assertConsumed() {

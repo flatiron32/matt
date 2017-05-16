@@ -1,23 +1,17 @@
 package matt;
 
-public class EventMonitor implements Monitor {
-
-  private final String name;
+public class EventMonitor extends AbstractMonitor {
 
   public EventMonitor(Class klass, String event) {
     this(klass.getName() + "." + event);
   }
 
   public EventMonitor(String name) {
-    this.name = name;
+    super(name);
   }
 
   public void fire() {
-    MonitoringEngine.getInstance().process(this);
+    process();
   }
 
-  @Override
-  public String getName() {
-    return name;
-  }
 }
