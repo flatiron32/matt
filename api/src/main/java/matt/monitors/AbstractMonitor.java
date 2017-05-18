@@ -10,6 +10,10 @@ public abstract class AbstractMonitor implements Monitor {
   private final Map<String, Object> attributes = new HashMap<>();
   private final String name;
 
+  AbstractMonitor(Class klass, String name) {
+    this(klass.getName() + "." + name);
+  }
+
   AbstractMonitor(String name) {
     this.name = name;
   }
