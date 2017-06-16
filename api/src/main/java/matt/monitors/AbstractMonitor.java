@@ -14,7 +14,7 @@ public abstract class AbstractMonitor implements Monitor {
     this(klass.getName() + "." + name);
   }
 
-  AbstractMonitor(String name) {
+  protected AbstractMonitor(String name) {
     this.name = name;
   }
 
@@ -33,5 +33,13 @@ public abstract class AbstractMonitor implements Monitor {
 
   void process() {
     MonitoringEngine.getInstance().process(this);
+  }
+
+  @Override
+  public String toString() {
+    return String.format("{%n"
+        + "  \"name\": \"%s\",%n"
+        + "  \"type\": \"%s\",%n"
+        + "}", getName(), getClass().getName());
   }
 }

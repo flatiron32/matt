@@ -71,3 +71,10 @@ project(':test') {
         compile 'junit:junit:4.12' //This project is an extension of testing
     }
 }
+
+project(':lib') {
+    dependencies {
+        compile project(':api')
+        testCompile 'uk.org.lidalia:slf4j-test:1.1.0'
+    }
+}
